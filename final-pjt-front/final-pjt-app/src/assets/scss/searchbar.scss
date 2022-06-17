@@ -1,0 +1,81 @@
+a {
+  text-decoration: none;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li {
+	font-size: 25px;
+	font-family: sans-serif;
+	background-color: black;
+	letter-spacing: 0.1em;
+	width: 5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	position: relative;
+	overflow: hidden;
+	margin: 0.5em;
+	cursor: pointer;
+}
+
+ul li span {
+	color: white;
+	mix-blend-mode: difference;
+}
+
+ul li::before {
+	content: '';
+	position: absolute;
+	width: 1.5em;
+	height: inherit;
+	background-color: #edbe2a;
+	border-radius: 50%;
+	top: 0;
+	left: -0.75em;
+	transition: 0.5s ease-out;
+}
+
+ul li:hover::before {
+	transform: scale(7);
+}
+
+// sideBtn
+.holder {
+  width: 100px;
+}
+
+.st0 {
+  fill: #000000;
+  clip-path: url(#movie_mask);
+  animation-name: stmove;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#maskpath {
+  animation-name: maskpathmove;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes stmove {
+  from {
+    transform: translatex(0px);
+  }
+  to {
+    transform: translatex(-29.9pt);
+  }
+}
+
+@keyframes maskpathmove {
+  from {
+    transform: translatex(0px);
+  }
+  to {
+    transform: translatex(29.9pt);
+  }
+}
